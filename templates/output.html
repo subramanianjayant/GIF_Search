@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Results</title>
+</head>
+<body>
+    <form method="POST">
+        Image URL: <input type="text" name="url"><br>
+        <input type="submit" value="Submit"><br>
+    </form>
+    {% if results %}
+        <table>
+            <tbody>
+            {% for url in results %}
+                <tr>
+                    <td><img src={{url}} alt="{{ url }}"></td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        No results :(
+    {% endif %}
+</body>
+</html>
